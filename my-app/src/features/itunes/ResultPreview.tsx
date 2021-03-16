@@ -44,7 +44,7 @@ export default function ResultPreview(props: IPreviewData) {
   return (
     <Grid item xs={12} md={6}>
         <Card className={classes.root}>
-            <Grid xs={12} md={7} className={classes.details}>
+            <Grid item xs={12} md={7} className={classes.details}>
                 <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
                     {props.artistName}
