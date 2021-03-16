@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import ResultPreview from './ResultPreview';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
     setIsLoading
 } from './itunesSlice';
@@ -68,6 +68,7 @@ export function ResultsTable(props:IResultTableProps) {
                             collectionPrice={d.collectionPrice}
                             type={`${d.wrapperType} ${d.kind?' - '+d.kind:''}`}
                             currency={d.currency}
+                            trackName={d.trackName}
                             key={index} />
                     })
                 }

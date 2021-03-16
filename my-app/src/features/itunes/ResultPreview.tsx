@@ -34,7 +34,8 @@ interface IPreviewData {
     collectionName?: string,
     type?: string,
     country?: string,
-    currency: string
+    currency: string,
+    trackName?: string
 }
 
 export default function ResultPreview(props: IPreviewData) {
@@ -48,6 +49,9 @@ export default function ResultPreview(props: IPreviewData) {
                 <CardContent className={classes.content}>
                 <Typography component="h5" variant="h5">
                     {props.artistName}
+                </Typography>
+                <Typography>
+                    {props.trackName}
                 </Typography>
                 <Typography color="textSecondary">
                 <b>Collection Name - Country: </b>{props.collectionName} - {props.country}
