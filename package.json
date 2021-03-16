@@ -1,0 +1,22 @@
+{
+  "name": "redux-thunk-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "serve": "node server.js",
+    "preserve": "npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm start --prefix my-app",
+    "build": "npm run build --prefix my-app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "express": "^4.17.1"
+  }
+}
