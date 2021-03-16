@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 // app.use('/search', 'https://itunes.apple.com/search');
 app.get('/search', (req, res) => {
   request(
-    { url: 'https://itunes.apple.com/search?term='+req.query.term},
+    { url: 'https://itunes.apple.com/search?limit=200&term='+req.query.term},
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
