@@ -47,7 +47,7 @@ export const searchByTerm = (searchTerm: string): AppThunk => dispatch => {
     params.append('limit', '200');
     try {
         axios
-        .get('https://itunes.apple.com/search', {params: params})
+        .get('/search', {params: params})
         .then(function (response: AxiosResponse<any>) {
             console.log(response)
             dispatch(setResults(response?.data?.results));

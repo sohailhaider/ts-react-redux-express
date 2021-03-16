@@ -1,11 +1,26 @@
 const express = require('express');
+const request = require('request');
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
 app.use(express.static(path.join(__dirname, 'my-app', 'build')));
 
-app.get('/ping', function (req, res) {
- return res.send('pong');
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+// app.use('/search', 'https://itunes.apple.com/search');
+app.get('/search', (req, res) => {
+  request(
+    { url: 'https://itunes.apple.com/search?term='+req.query.term},
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+
+      res.json(JSON.parse(body));
+    }
+  )
 });
 
 app.get('/', function (req, res) {

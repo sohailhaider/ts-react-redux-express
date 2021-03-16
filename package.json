@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://localhost:8080",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test --prefix my-app",
     "server": "node server.js",
     "serve": "node server.js",
     "preserve": "npm run build",
@@ -17,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^6.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "request": "^2.88.2"
   }
 }
