@@ -6,8 +6,8 @@
   "scripts": {
     "test": "npm run test --prefix my-app",
     "server": "node server.js",
-    "serve": "node server.js",
-    "preserve": "npm run build",
+    "start": "node server.js",
+    "prestart": "npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm start --prefix my-app",
     "build": "npm run build --prefix my-app",
