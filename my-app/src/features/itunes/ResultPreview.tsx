@@ -43,23 +43,23 @@ export default function ResultPreview(props: IPreviewData) {
   const theme = useTheme();
 
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12} md={6} data-testid="resultPreview">
         <Card className={classes.root}>
             <Grid item xs={12} md={7} className={classes.details}>
                 <CardContent className={classes.content}>
-                <Typography component="h5" variant="h5">
+                <Typography data-testid="artistName" component="h5" variant="h5">
                     {props.artistName}
                 </Typography>
-                <Typography>
+                <Typography data-testid="trackName">
                     {props.trackName}
                 </Typography>
-                <Typography color="textSecondary">
+                <Typography data-testid="collectionNameCountry" color="textSecondary">
                 <b>Collection Name - Country: </b>{props.collectionName} - {props.country}
                 </Typography>
-                <Typography color="textSecondary">
+                <Typography data-testid="collectionPriceCurrency" color="textSecondary">
                     <b>Price: </b>{props.collectionPrice} {props.currency}
                 </Typography>
-                <Typography>
+                <Typography data-testid="type">
                     <b>Type: </b>{props.type}
                 </Typography>
                 </CardContent>

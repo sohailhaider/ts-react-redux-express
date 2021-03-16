@@ -46,7 +46,7 @@ export function ITunes() {
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Box mt={10}>
-                        <Typography variant="h2" align="center" gutterBottom>
+                        <Typography data-testid="engineTitle" variant="h2" align="center" gutterBottom>
                             iTunes Search Engine
                         </Typography>
                     </Box>
@@ -55,14 +55,14 @@ export function ITunes() {
                 <Grid item xs={2}>
                 </Grid>
                 <Grid item xs={8}>
-                    <TextField autoFocus={true} value={searchTerm} onChange={e=>setSearchTerm(e.target.value)} fullWidth={true} inputProps={{min: 0, style: { textAlign: 'center' }}} id="outlined-basic" label="Input Term to Search" variant="outlined" />
+                    <TextField data-testid="searchField" autoFocus={true} value={searchTerm} onChange={e=>setSearchTerm(e.target.value)} fullWidth={true} inputProps={{min: 0, style: { textAlign: 'center' }}} id="outlined-basic" label="Input Term to Search" variant="outlined" />
                 </Grid>
                 <Grid item xs={2}></Grid>
 
                 <Grid item xs={2}></Grid>
                 <Grid item xs={8}>
                     <Box display="flex" flexDirection="row-reverse">
-                        <Button type="submit" variant="contained" color="primary" size="large" disableElevation>
+                        <Button data-testid="searchBtn" type="submit" variant="contained" color="primary" size="large" disableElevation>
                             Search
                         </Button>
                     </Box>
