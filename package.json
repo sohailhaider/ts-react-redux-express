@@ -4,14 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test --prefix my-app",
-    "server": "node server.js",
-    "start": "node server.js",
-    "prestart": "npm run build",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "npm start --prefix my-app",
-    "build": "npm run build --prefix my-app",
-    "prebuild": "npm i --prefix my-app"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
