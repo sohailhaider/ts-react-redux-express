@@ -28,7 +28,9 @@ export function ResultsTable(props:IResultTableProps) {
     let count = 10;
     const [showCount, setShowCount] = useState(10)
     const loadMore = () => {
-        if (window.innerHeight + document?.documentElement.scrollTop === document?.scrollingElement?.scrollHeight) {
+        const height = (document && document.scrollingElement && document.scrollingElement.scrollHeight)?document.scrollingElement.scrollHeight : 999999;
+        if (window.innerHeight + document?.documentElement.scrollTop >= height) {
+            // console.log(props)
             if(count < 200) {
                 dispatch(setIsLoading(true));
                 setTimeout(() => {
