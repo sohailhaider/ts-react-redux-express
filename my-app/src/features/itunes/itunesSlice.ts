@@ -44,19 +44,19 @@ export const searchByTerm = (searchTerm: string): AppThunk => dispatch => {
 
     const params = new URLSearchParams();
     params.append('term', searchTerm);
-    params.append('limit', '10');
+    params.append('limit', '200');
     try {
         axios
         .get('https://itunes.apple.com/search', {params: params})
         .then(function (response: AxiosResponse<any>) {
             console.log(response)
             dispatch(setResults(response?.data?.results));
+            dispatch(setIsLoading(false))
         })
     } catch (error) {
         console.log(error.message)
         dispatch(setMessage(error.message))
     }
-    dispatch(setIsLoading(false))
     
 };
 

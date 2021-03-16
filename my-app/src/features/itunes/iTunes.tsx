@@ -14,6 +14,7 @@ import {
     selectIsSearched
 } from './itunesSlice';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { ResultsTable } from './ResultsTable'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -71,9 +72,7 @@ export function ITunes() {
         </form>
         <Grid container>
             {isSearched&&
-                <div>
-                Results
-                </div>
+            <ResultsTable data={results}/>
             }
         </Grid>
     </div>)
