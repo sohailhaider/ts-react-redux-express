@@ -29,6 +29,7 @@ export function ResultsTable(props:IResultTableProps) {
     const [showCount, setShowCount] = useState(10)
     const loadMore = () => {
         const height = (document && document.scrollingElement && document.scrollingElement.scrollHeight)?document.scrollingElement.scrollHeight : 999999;
+        console.log("comparing", window.innerHeight + document?.documentElement.scrollTop, height)
         if (window.innerHeight + document?.documentElement.scrollTop >= height) {
             console.log('loading more', count)
             if(count < 200) {
