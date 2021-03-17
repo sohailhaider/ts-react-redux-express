@@ -40,7 +40,6 @@ export const { setResults, setMessage, setIsLoading, setIsSearchedTrue } = itune
 export const searchByTerm = (searchTerm: string): AppThunk => dispatch => {
     
     dispatch(setIsLoading(true))
-    dispatch(setIsSearchedTrue())
 
     const params = new URLSearchParams();
     params.append('term', searchTerm);
@@ -51,10 +50,12 @@ export const searchByTerm = (searchTerm: string): AppThunk => dispatch => {
         .then(function (response: AxiosResponse<any>) {
             console.log(response)
             dispatch(setResults(response?.data?.results));
+            dispatch(setIsSearchedTrue())
             dispatch(setIsLoading(false))
         })
     } catch (error) {
         console.log(error.message)
+        dispatch(setIsSearchedTrue())
         dispatch(setMessage(error.message))
     }
     
